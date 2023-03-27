@@ -1,0 +1,170 @@
+<div style="padding: 2rem">
+  <!--Dialogfeld-->
+  <h2 mat-dialog-title>Create new Task:</h2>
+  <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <mat-dialog-content class="mat-typography">
+      <div class="dialog_container_">
+        <div class="dialog_leftside_">
+          <!--Task Title-->
+          <div style="margin-bottom: 2rem; margin-top: 1rem">
+            <label for="title" class="input_descriptions_">Task Title:</label
+            ><br />
+            <input
+              class="input_fields_custom_"
+              type="text"
+              id="title"
+              name="fname"
+              formControlName="title"
+              placeholder="Enter a Task-Title.."
+            /><br /><br />
+          </div>
+
+          <!--Task Timeline-->
+          <label for="timeline" class="input_descriptions_">Timeline:</label
+          ><br />
+          <div id="timeline" class="timeline_container_">
+            <input
+              type="date"
+              id="timelinestart"
+              name="timelinestart"
+              formControlName="dateStart"
+            />
+            <input
+              type="date"
+              id="timelineend"
+              name="timelineend"
+              formControlName="dateEnd"
+            /><br />
+          </div>
+          <br />
+
+          <!--Categorys-->
+          <label for="categories" class="input_descriptions_">Categorys:</label
+          ><br />
+          <div
+            *ngFor="let category of categories"
+            id="categories"
+            class="categorys_"
+          >
+            <input
+              type="radio"
+              [id]="category.name"
+              formControlName="category"
+              [value]="category.name"
+            />
+            <label [for]="category.name">{{ category.name }}</label
+            ><br />
+          </div>
+          <br />
+
+          <!--Task Description-->
+          <label for="description" class="input_descriptions_"
+            >Task Description:</label
+          ><br />
+          <textarea
+            id="description"
+            name="message"
+            rows="10"
+            cols="30"
+            formControlName="description"
+            placeholder="Enter a Task-Description.."
+          >
+          </textarea>
+        </div>
+
+        <div class="dialog_rightside_">
+          <label for="participant" class="input_descriptions_"
+            >Task Participants:</label
+          ><br />
+          <mat-form-field class="example-chip-list" appearance="fill">
+            <mat-label>Participants</mat-label>
+            <mat-chip-grid
+              #chipGrid
+              aria-label="Fruit selection"
+              formControlName="participants"
+            >
+              <mat-chip-row
+                *ngFor="let participant of participantsString"
+                (removed)="remove(participant)"
+              >
+                {{ participant }}
+                <button
+                  matChipRemove
+                  [attr.aria-label]="'remove ' + participant"
+                >
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip-row>
+            </mat-chip-grid>
+            <input
+              placeholder="Name.."
+              #participantInput
+              [formControl]="participantCtrl"
+              [matChipInputFor]="chipGrid"
+              [matAutocomplete]="auto"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="add($event)"
+            />
+            <mat-autocomplete
+              #auto="matAutocomplete"
+              (optionSelected)="selected($event)"
+            >
+              <mat-option
+                *ngFor="let participant of filteredParticipants | async"
+                [value]="participant"
+              >
+                {{ participant }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+
+          <div style="margin-bottom: 2rem; margin-top: 1rem">
+            <label for="subtask" class="input_descriptions_">Subtask:</label
+              ><br />
+              <input
+                type="text"
+                id="subtask"
+                name="lname"
+                [(ngModel)]="subtask"
+                [ngModelOptions]="{ standalone: true }"
+              /><br />
+          </div>
+
+          <a (click)="onClickAddSubTask()" id="createSubtask_button">Create Subtask</a>
+
+          <ul style="list-style: none;">
+            <li *ngFor="let subtask of subtasks; let i = index" style="border: 1px solid grey;">
+              <span>{{ subtask }}</span>
+              <span (click)="onClickRemoveSubTask(i)">
+                <img src="assets/images/delete.png" alt="Delete-Icon" style="width: 2rem; cursor: pointer;">
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </mat-dialog-content>
+
+    <!--Create-Button-->
+    <div class="create_new_task_button_">
+      <mat-dialog-actions>
+        <button
+          [mat-dialog-close]="true"
+          cdkFocusInitial
+          class="cancel_new_task_button_style_"
+        >
+          Cancel
+        </button>
+      </mat-dialog-actions>
+      <mat-dialog-actions>
+        <button
+          [mat-dialog-close]="true"
+          cdkFocusInitial
+          class="create_new_task_button_style_"
+          type="submit"
+        >
+          Create
+        </button>
+      </mat-dialog-actions>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,89 @@
+.navbar_meetandeat_ {
+  height: 1080px;
+  width: 283px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav_logo_ {
+  position: absolute;
+  width: 151px;
+  height: 87.79px;
+  left: 63px;
+  top: 32px;
+}
+
+.nav_profile_ {
+  position: absolute;
+  width: 132px;
+  height: 132px;
+  left: 73px;
+  top: 197px;
+}
+
+h6 {
+  position: absolute;
+  width: 120.58px;
+  height: 23px;
+  left: 77px;
+  top: 403px;
+
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16.7273px;
+  line-height: 20px;
+  color: #52504f;
+}
+
+.nav_username_ {
+  position: absolute;
+  width: 174px;
+  height: 30.68px;
+  left: 50px;
+  top: 357px;
+}
+
+.icon_navigation_ {
+  position: absolute;
+  left: 50px;
+  top: 513px;
+}
+
+.nav_icons_ {
+  width: 23px;
+  height: 23px;
+}
+
+.icon_flex_ {
+  display: flex;
+}
+
+.line_span_ {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 186px;
+  height: 1.3px;
+  background-color: #cbcbcb;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: rgba(50, 49, 48, 0.7);
+}
+
+#eventplaner_ {
+  color: #323130;
+}

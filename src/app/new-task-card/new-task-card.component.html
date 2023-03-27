@@ -1,0 +1,52 @@
+<!--
+    <div class="task_card_container_" *ngIf="task">
+    <h1>{{task.categories}}</h1>
+    </div>
+-->
+
+<!--New Task Card-->
+<div class="task_card_container_" (click)="openTaskCard()">
+  <div class="task_card_elements_container_">
+
+    <!--Task Title-->
+    <div style="display: flex; justify-content: space-between;">
+        <h1>Spiele heraussuchen</h1>
+        <div class="dropdown">
+            <img src="assets/images/task_settings.png" alt="Task-Settings" id="task_settings">
+            <div class="dropdown-content">
+              <a href="#">Edit</a>
+              <a href="#">Delete</a>
+            </div>
+          </div>
+    </div>
+
+    <!--Task Timeline-->
+    <div style="display: flex; align-items:center; margin-bottom: 1rem;">
+        <img src="assets/images/task_time.png" alt="Task-Time" class="task_icons">
+        <h2>Wed, 12 Jan - Thu, 31 Mar</h2>
+    </div>
+
+    <!--Task Category-->
+    <div style="display: flex; align-items:center;  margin-bottom: 1rem;">
+        <img src="assets/images/task_categories.png" alt="Task-Categories" class="task_icons">
+        <h2>Games</h2>
+    </div>
+    
+    <!--Task Description-->
+    <h2 style="margin-bottom: 2rem;">Die Spiele für den Stammtisch müssen vorbereitet werden, hierfür brauchen wir verschiedene Materialien. Würfel, Stühle, Figuren...</h2>
+
+    <!--Task Progressbar-->
+    <div style="display: flex; justify-content: space-between;">
+        <h3>Task Progress</h3>
+        <h4>38%</h4>
+    </div>
+    <div class="progressbar_container">
+        <div class="progressbar" style="width: 38%;"></div>
+    </div>
+
+    <!--Task Participants-->
+    <div>
+        <img src="assets/images/profile_pic.png" alt="Participants-Pictures" id="participants_pics">
+    </div>
+  </div>
+</div>

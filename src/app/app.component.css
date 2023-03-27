@@ -1,0 +1,138 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  max-width: 1920px;
+  max-height: 1080px;
+  display: flex;
+}
+
+.main_content_ {
+  height: 1080px;
+  width: 1637px;
+  background-color: #F1F3F4;
+}
+
+h1 {
+  position: absolute;
+  width: 274px;
+  height: 43px;
+  left: 351px;
+  top: 57px;
+
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+
+  color: #323130;
+}
+
+h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #52504f;
+}
+
+a {
+  text-decoration: none;
+}
+
+.add_new_btn_ {
+  padding: 16px 40px;
+  position: absolute;
+  left: 1636px;
+  top: 54px;
+  background: linear-gradient(90deg, #a01441, #be3e67);
+  border-radius: 6px;
+  letter-spacing: 2px;
+  text-transform: unset !important;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 27px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.add_new_btn_:active {
+  transform: translateY(2px);
+}
+
+.main_content_topside_ {
+  height: 14.5%;
+}
+
+.main_content_botside_ {
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-around;
+  height: 80%;
+  overflow-y: auto;
+}
+
+.main_content_midside_ {
+  display: flex;
+  justify-content:flex-start;
+  height: 5.5%;
+}
+
+.main_content_botside_container_ {
+  height: 100%;
+  width: 30%;
+}
+
+#newTask_circle_ {
+  background-color: rgb(219, 43, 43);
+  border-radius: 500rem;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1rem;
+}
+
+#inProgress_circle_ {
+  background-color: rgb(91, 209, 91);
+  border-radius: 500rem;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1rem;
+}
+
+#doneTask_circle_ {
+  background-color: rgb(11, 146, 230);
+  border-radius: 500rem;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1rem;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.progressTask_title_1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-left: 4.6rem;
+}
+
+.progressTask_title_2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-left: 22.6rem;
+}
+
+.progressTask_title_3 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-left: 21.6rem;
+}

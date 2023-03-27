@@ -1,0 +1,70 @@
+<body>
+  <app-navbar></app-navbar>
+  <div class="main_content_">
+
+    <!--Die Seite ist in Top und Bot aufgeteilt-->
+    <div class="main_content_topside_">
+      <h1>Task Manager</h1>
+    <button class="add_new_btn_" (click)="openDialog()"
+      >Add New +</button
+    >
+    </div>
+
+    <!--Das sind die Phasen der Tasks-->
+    <div class="main_content_midside_">
+      <div class="progressTask_title_1">
+        <div id="newTask_circle_"></div>
+        <h2>New Task</h2>
+      </div>
+
+      <div class="progressTask_title_2">
+        <div id="inProgress_circle_"></div>
+        <h2>In Progress</h2>
+      </div>
+
+      <div class="progressTask_title_3">
+        <div id="doneTask_circle_"></div>
+        <h2>Done Task</h2>
+      </div>
+    </div>
+
+    <!--Ich habe zum testen mehrere statische Taskkarten aufgerufen um zu schauen ob das scrollen und alle anderen sachen sich so verhalten wie sie sollen-->
+
+    <!--Die Seite ist in Top und Bot aufgeteilt-->
+    <div class="main_content_botside_">
+      <div class="newTask_container_ main_content_botside_container_">
+
+        <app-new-task-card *ngFor="let task of tasks" [task]="task"></app-new-task-card>
+        <app-new-task-card></app-new-task-card>
+        <br>
+        <app-new-task-card></app-new-task-card>
+        <br>
+        <app-new-task-card></app-new-task-card>
+        
+        <div style="height: 3rem; width: 100%;"></div>
+      </div>
+
+      <div class="inProgress_container_ main_content_botside_container_">
+
+        <app-new-task-card></app-new-task-card>
+        <br>
+        <app-new-task-card></app-new-task-card>
+        <br>
+        <app-new-task-card></app-new-task-card>
+
+        <div style="height: 3rem; width: 100%;"></div>
+      </div>
+
+      <div class="doneTask_container_ main_content_botside_container_">
+
+        <app-new-task-card></app-new-task-card>
+        <br>
+        <app-new-task-card></app-new-task-card>
+        <br>
+        <app-new-task-card></app-new-task-card>
+
+        <div style="height: 3rem; width: 100%;"></div>
+      </div>
+    </div>
+  </div>
+</body>
