@@ -38,18 +38,18 @@
           </div>
           <br />
 
-          <!--Categorys-->
-          <label for="categories" class="input_descriptions_">Categorys:</label
+          <!--Categories-->
+          <label for="categories" class="input_descriptions_">Categories:</label
           ><br />
           <div
             *ngFor="let category of categories"
             id="categories"
-            class="categorys_"
+            class="categories_"
           >
             <input
               type="radio"
               [id]="category.name"
-              formControlName="category"
+              formControlName="categories"
               [value]="category.name"
             />
             <label [for]="category.name">{{ category.name }}</label
