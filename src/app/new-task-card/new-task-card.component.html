@@ -10,7 +10,7 @@
 
     <!--Task Title-->
     <div style="display: flex; justify-content: space-between;">
-        <h1>Spiele heraussuchen</h1>
+        <h1>{{task.taskTitle}}</h1>
         <div class="dropdown">
             <img src="assets/images/task_settings.png" alt="Task-Settings" id="task_settings">
             <div class="dropdown-content">
@@ -23,17 +23,19 @@
     <!--Task Timeline-->
     <div style="display: flex; align-items:center; margin-bottom: 1rem;">
         <img src="assets/images/task_time.png" alt="Task-Time" class="task_icons">
-        <h2>Wed, 12 Jan - Thu, 31 Mar</h2>
+        <h2>{{task.timeline.from}} - {{task.timeline.to}}</h2>
     </div>
 
     <!--Task Category-->
     <div style="display: flex; align-items:center;  margin-bottom: 1rem;">
         <img src="assets/images/task_categories.png" alt="Task-Categories" class="task_icons">
-        <h2>Games</h2>
+        <h2>{{task.categories}}</h2>
     </div>
-    
+
     <!--Task Description-->
-    <h2 style="margin-bottom: 2rem;">Die Spiele für den Stammtisch müssen vorbereitet werden, hierfür brauchen wir verschiedene Materialien. Würfel, Stühle, Figuren...</h2>
+    <h2 style="margin-bottom: 2rem;">
+      {{task.taskDescription}}
+    </h2>
 
     <!--Task Progressbar-->
     <div style="display: flex; justify-content: space-between;">
@@ -46,6 +48,7 @@
 
     <!--Task Participants-->
     <div>
+      <img *ngFor="let participant of task.participants" [src]="participant" alt="">
         <img src="assets/images/profile_pic.png" alt="Participants-Pictures" id="participants_pics">
     </div>
   </div>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {Task} from "../shared/model/task.model";
 
 @Component({
   selector: 'app-task-card-detailview',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class TaskCardDetailviewComponent {
 
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {task: Task}) {
+  }
 }

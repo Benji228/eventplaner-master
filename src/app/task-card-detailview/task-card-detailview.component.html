@@ -1,157 +1,160 @@
-<div>
-  <div class="task_card_detailview">
-    <!--Task Title-->
-    <div style="display: flex; justify-content: space-between">
-      <h1>Spiele heraussuchen</h1>
-      <div class="dropdown">
-        <img
-          src="assets/images/task_settings.png"
-          alt="Task-Settings"
-          id="task_settings"
-        />
-        <div class="dropdown-content">
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
+<ng-template let-data>
+  {{data | json}}
+  <div>
+    <div class="task_card_detailview">
+      <!--Task Title-->
+      <div style="display: flex; justify-content: space-between">
+        <h1>Spiele heraussuchen</h1>
+        <div class="dropdown">
+          <img
+            src="assets/images/task_settings.png"
+            alt="Task-Settings"
+            id="task_settings"
+          />
+          <div class="dropdown-content">
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!--Task Timeline-->
-    <div style="display: flex; align-items: center; margin-bottom: 1rem">
-      <img
-        src="assets/images/task_time.png"
-        alt="Task-Time"
-        class="task_icons"
-      />
-      <h2 style="font-size: 25px">Wed, 12 Jan - Thu, 31 Mar</h2>
-    </div>
-
-    <!--Task Category-->
-    <div style="display: flex; align-items: center; margin-bottom: 3rem">
-      <img
-        src="assets/images/task_categories.png"
-        alt="Task-Categories"
-        class="task_icons"
-      />
-      <h2 style="font-size: 25px">Games</h2>
-    </div>
-
-    <!--Task Description-->
-    <h2 style="font-size: 20px; font-weight: bold; color: #6d6a69">
-      Description:
-    </h2>
-    <br />
-    <h2 style="margin-bottom: 3rem; color: #777473">
-      Die Spiele für den Stammtisch müssen vorbereitet werden, hierfür brauchen
-      wir verschiedene Materialien. Würfel, Stühle, Figuren und Hütchen. Wer
-      kann soll die nötigen Materialien von Zuhause aus mitbringen, ansonsten
-      kaufen wir sie bei Tedox ein. Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi
-      repudiandae consequuntur voluptatum laborum numquam blanditiis harum
-      quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
-      Provident similique accusantium nemo autem. Veritatis obcaecati tenetur
-      iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet
-      aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error,
-      harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-      error repudiandae fuga? Ipsa laudantium molestias eos.
-    </h2>
-
-    <!--Task Participants-->
-    <h2 style="font-size: 20px; font-weight: bold; color: #6d6a69">
-      Participants:
-    </h2>
-    <br />
-    <div style="margin-bottom: 3rem; display: flex">
-      <mat-chip-listbox aria-label="Participants">
-        <mat-chip class="participant_chip">
-          <img
-            src="assets/images/profile_pic.png"
-            alt="Participants"
-            id="participants_pics"
-          />
-          Ben Schnitter
-        </mat-chip>
-        <mat-chip class="participant_chip">
-          <img
-            src="assets/images/profile_pic.png"
-            alt="Participants"
-            id="participants_pics"
-          />
-          Laura Stenzig
-        </mat-chip>
-        <mat-chip class="participant_chip">
-          <img
-            src="assets/images/profile_pic.png"
-            alt="Participants"
-            id="participants_pics"
-          />
-          Timon Lutz
-        </mat-chip>
-        <mat-chip class="participant_chip">
-          <img
-            src="assets/images/profile_pic.png"
-            alt="Participants"
-            id="participants_pics"
-          />
-          Said Said
-        </mat-chip>
-        <mat-chip class="participant_chip">
-          <img
-            src="assets/images/profile_pic.png"
-            alt="Participants"
-            id="participants_pics"
-          />
-          Emma Thies
-        </mat-chip>
-        <mat-chip class="participant_chip">
-          <img
-            src="assets/images/profile_pic.png"
-            alt="Participants"
-            id="participants_pics"
-          />
-          Leonard Müller
-        </mat-chip>
-      </mat-chip-listbox>
-    </div>
-
-    <!--Task Subtasks-->
-    <h2 style="font-size: 20px; font-weight: bold; color: #6d6a69">
-      Subtasks:
-    </h2>
-    <br />
-    <div>
-      <div class="subtask_container">
-        <h2 style="margin-left: 1rem; color: #52504f">Müll raus bringen</h2>
-        <label class="container">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
+      <!--Task Timeline-->
+      <div style="display: flex; align-items: center; margin-bottom: 1rem">
+        <img
+          src="assets/images/task_time.png"
+          alt="Task-Time"
+          class="task_icons"
+        />
+        <h2 style="font-size: 25px">Wed, 12 Jan - Thu, 31 Mar</h2>
       </div>
-      <br />
-      <div class="subtask_container">
-        <h2 style="margin-left: 1rem; color: #52504f">Geschirr abwaschen</h2>
-        <label class="container">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
+
+      <!--Task Category-->
+      <div style="display: flex; align-items: center; margin-bottom: 3rem">
+        <img
+          src="assets/images/task_categories.png"
+          alt="Task-Categories"
+          class="task_icons"
+        />
+        <h2 style="font-size: 25px">Games</h2>
       </div>
+
+      <!--Task Description-->
+      <h2 style="font-size: 20px; font-weight: bold; color: #6d6a69">
+        Description:
+      </h2>
       <br />
-      <div class="subtask_container">
-        <h2 style="margin-left: 1rem; color: #52504f">Raum fegen</h2>
-        <label class="container">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
+      <h2 style="margin-bottom: 3rem; color: #777473">
+        Die Spiele für den Stammtisch müssen vorbereitet werden, hierfür brauchen
+        wir verschiedene Materialien. Würfel, Stühle, Figuren und Hütchen. Wer
+        kann soll die nötigen Materialien von Zuhause aus mitbringen, ansonsten
+        kaufen wir sie bei Tedox ein. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi
+        repudiandae consequuntur voluptatum laborum numquam blanditiis harum
+        quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
+        Provident similique accusantium nemo autem. Veritatis obcaecati tenetur
+        iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet
+        aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error,
+        harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
+        error repudiandae fuga? Ipsa laudantium molestias eos.
+      </h2>
+
+      <!--Task Participants-->
+      <h2 style="font-size: 20px; font-weight: bold; color: #6d6a69">
+        Participants:
+      </h2>
+      <br />
+      <div style="margin-bottom: 3rem; display: flex">
+        <mat-chip-listbox aria-label="Participants">
+          <mat-chip class="participant_chip">
+            <img
+              src="assets/images/profile_pic.png"
+              alt="Participants"
+              id="participants_pics"
+            />
+            Ben Schnitter
+          </mat-chip>
+          <mat-chip class="participant_chip">
+            <img
+              src="assets/images/profile_pic.png"
+              alt="Participants"
+              id="participants_pics"
+            />
+            Laura Stenzig
+          </mat-chip>
+          <mat-chip class="participant_chip">
+            <img
+              src="assets/images/profile_pic.png"
+              alt="Participants"
+              id="participants_pics"
+            />
+            Timon Lutz
+          </mat-chip>
+          <mat-chip class="participant_chip">
+            <img
+              src="assets/images/profile_pic.png"
+              alt="Participants"
+              id="participants_pics"
+            />
+            Said Said
+          </mat-chip>
+          <mat-chip class="participant_chip">
+            <img
+              src="assets/images/profile_pic.png"
+              alt="Participants"
+              id="participants_pics"
+            />
+            Emma Thies
+          </mat-chip>
+          <mat-chip class="participant_chip">
+            <img
+              src="assets/images/profile_pic.png"
+              alt="Participants"
+              id="participants_pics"
+            />
+            Leonard Müller
+          </mat-chip>
+        </mat-chip-listbox>
       </div>
+
+      <!--Task Subtasks-->
+      <h2 style="font-size: 20px; font-weight: bold; color: #6d6a69">
+        Subtasks:
+      </h2>
       <br />
-      <div class="subtask_container">
-        <h2 style="margin-left: 1rem; color: #52504f">Fenster putzen</h2>
-        <label class="container">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
+      <div>
+        <div class="subtask_container">
+          <h2 style="margin-left: 1rem; color: #52504f">Müll raus bringen</h2>
+          <label class="container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <br />
+        <div class="subtask_container">
+          <h2 style="margin-left: 1rem; color: #52504f">Geschirr abwaschen</h2>
+          <label class="container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <br />
+        <div class="subtask_container">
+          <h2 style="margin-left: 1rem; color: #52504f">Raum fegen</h2>
+          <label class="container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <br />
+        <div class="subtask_container">
+          <h2 style="margin-left: 1rem; color: #52504f">Fenster putzen</h2>
+          <label class="container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <br />
       </div>
-      <br />
     </div>
   </div>
-</div>
+</ng-template>

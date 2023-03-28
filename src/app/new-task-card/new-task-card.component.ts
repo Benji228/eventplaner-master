@@ -17,7 +17,11 @@ export class NewTaskCardComponent {
   ) {}
 
   openTaskCard() {
-    const dialogRef = this.dialog.open(TaskCardDetailviewComponent);
+    const dialogRef = this.dialog.open(TaskCardDetailviewComponent, {
+      data: {
+        task: this.task
+      }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
