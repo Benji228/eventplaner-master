@@ -48,8 +48,7 @@
 
     <!--Task Participants-->
     <div>
-      <img *ngFor="let participant of task.participants" [src]="participant" alt="">
-        <img src="assets/images/profile_pic.png" alt="Participants-Pictures" id="participants_pics">
+      <img *ngFor="let participant of filteredParticipants" [src]="participant.avatar" alt="" id="participants_pics">
     </div>
   </div>
 </div>

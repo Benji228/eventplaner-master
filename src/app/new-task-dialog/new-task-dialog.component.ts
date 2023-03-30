@@ -35,7 +35,7 @@ export class NewTaskDialogComponent implements OnInit{
 
   categories!: Category[];
   participants!: Participant[];
-  filteredParticipants: Observable<string[]>;
+  filteredParticipants: Observable<Participant[]>;
   allParticipants: string[] = [];
   participantCtrl = new FormControl('');
 
@@ -78,10 +78,11 @@ export class NewTaskDialogComponent implements OnInit{
       subtasks: '',
     });
 
-    this.filteredParticipants = this.participantCtrl.valueChanges.pipe(
-      startWith(null),
-      map((participant: string | null) => (participant ? this._filter(participant) : this.allParticipants.slice())),
-    );
+    // this.filteredParticipants = this.participantCtrl.valueChanges
+    // this.filteredParticipants = this.participantCtrl.valueChanges.pipe(
+    //   startWith(null),
+    //   map((participant: Participant | null) => (participant ? this._filter(participant) : this.allParticipants.slice())),
+    // );
   }
 
   onFormSubmit() {
@@ -118,8 +119,9 @@ export class NewTaskDialogComponent implements OnInit{
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
-
+    console.log('value ' + value)
     if (value) {
+      console.log(value)
       this.participantsString.push(value);
     }
 
@@ -131,18 +133,26 @@ export class NewTaskDialogComponent implements OnInit{
     })
   }
 
-  selected(event: MatAutocompleteSelectedEvent): void {
+  selected(event: any): void {
+    console.log("value added " + event.option)
     this.participantsString.push(event.option.viewValue);
     this.participantInput.nativeElement.value = '';
     this.participantCtrl.setValue(null);
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+
+  private _filter(value: Participant): string[] {
+    const filterValue = value.name.toLowerCase();
 
 
     return this.allParticipants.filter(parti => parti.toLowerCase().includes(filterValue));
   }
+  // private _filter(value: string): string[] {
+  //   const filterValue = value.toLowerCase();
+  //
+  //
+  //   return this.allParticipants.filter(parti => parti.toLowerCase().includes(filterValue));
+  // }
 
   onClickAddSubTask() {
     this.subtasks.push(this.subtask);

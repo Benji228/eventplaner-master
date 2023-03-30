@@ -73,9 +73,8 @@
         </div>
 
         <div class="dialog_rightside_">
-          <label for="participant" class="input_descriptions_"
-            >Task Participants:</label
-          ><br />
+          <label for="participant" class="input_descriptions_">Task Participants:</label>
+          <br />
           <mat-form-field class="example-chip-list" appearance="fill">
             <mat-label>Participants</mat-label>
             <mat-chip-grid
@@ -110,10 +109,10 @@
               (optionSelected)="selected($event)"
             >
               <mat-option
-                *ngFor="let participant of filteredParticipants | async"
-                [value]="participant"
+                *ngFor="let participant of participants"
+                [value]="participant.id"
               >
-                {{ participant }}
+                {{ participant.name }}
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
