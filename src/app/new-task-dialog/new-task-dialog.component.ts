@@ -51,6 +51,8 @@ export class NewTaskDialogComponent implements OnInit{
         this.categories = value;
       }
     });
+
+
     this.participantService.getParticipants().subscribe({
       next: value => {
         console.log(value)
